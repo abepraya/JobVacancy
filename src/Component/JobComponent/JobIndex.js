@@ -16,7 +16,7 @@ class JobIndex extends React.Component {
 
   handlePage(n) {
     this.setState({data: []})
-    axios.get(`https://cors-anywhere.herokuapp.com/https://jobs.github.com/positions.json`)
+    axios.get(`https://cors-anywhere.herokuapp.com/https://jobs.github.com/positions.json?page=${n}``)
       .then(res => this.setState({data: res.data}))
       .catch(err => console.log(err))
   }
